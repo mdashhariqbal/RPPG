@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.csv
+webcam_pulse_waveform_*.png
+.venv/
+venv/
