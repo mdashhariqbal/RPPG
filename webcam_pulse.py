@@ -81,12 +81,12 @@ def get_forehead_box(detection, frame_w, frame_h):
     # forehead_x = x + inset
     # forehead_w = max(1, w - 2 * inset)
 
-    # Define forehead region
-    inset = int(h * 0.25)
-    forehead_h = int(h * 0.3)
-    forehead_y = max(0, y - inset)
-    forehead_x = x + (w - forehead_w) // 2
-    forehead_w = int(w * 0.3)
+    offset_y = int(h * 0.20)          # shift up above the face box's top edge (slightly lower than before)
+    forehead_y = max(0, y - offset_y)
+    forehead_h = int(h * 0.25)        # taller band
+    inset = int(0.20 * w)             # slightly wider band, still inset from hairline/temples
+    forehead_x = x + inset
+    forehead_w = max(1, w - 2 * inset)
 
     return forehead_x, forehead_y, forehead_w, forehead_h
 
